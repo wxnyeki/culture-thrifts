@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 function Hero() {
+  const navigate =useNavigate();
   return (
+
     <section className="bg-white rounded-3xl p-10 flex items-center justify-between mb-10">
+      
+      
       <div className="max-w-xl">
         <h1 className="text-7xl font-black leading-none mb-6">
           WEAR YOUR CULTURE.
@@ -10,7 +16,9 @@ function Hero() {
           Curated. Thrifted. Authentic.
         </p>
 
-        <button className="bg-black text-white px-8 py-4 rounded-xl">
+        <button className="bg-black text-white px-8 py-4 rounded-xl font-bold"
+        type="button"
+        onClick={() => navigate ("/shop")}>       
           SHOP NOW
         </button>
       </div>
@@ -19,6 +27,7 @@ function Hero() {
         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
         className="w-[420px] h-[420px] object-cover rounded-3xl"
       />
+    
     </section>
   );
 }
