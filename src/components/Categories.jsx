@@ -1,8 +1,7 @@
-function Categories() {
+function Categories( {onCategoryClick}) {
   const categories = [
     "Men",
     "Women",
-    "Shoes",
     "Accessories",
     "Vintage",
   ];
@@ -10,17 +9,20 @@ function Categories() {
   return (
     <section className="mb-10">
       <h2 className="text-3xl font-black mb-6">
-        CATEGORIES
+        Search by Categories
       </h2>
 
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid grid-cols-5 md:grid-cols-5 gap-5">
         {categories.map((category) => (
-          <div
+          <button
             key={category}
+            onClick={() => onCategoryClick(category)}
             className="bg-white p-10 rounded-2xl text-center font-semibold shadow-sm"
+          type="button"
           >
             {category}
-          </div>
+            
+          </button>
         ))}
       </div>
     </section>
