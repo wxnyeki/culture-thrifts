@@ -85,7 +85,7 @@ function App() {
       return [...prev, {...product, quantity: 1}];
     });  
   };
-  // App.js
+  
 
 //  Function to remove an item entirely
 const removeItem = (productId) => {
@@ -153,10 +153,8 @@ const updateQuantity = (productId, amount) => {
       {/* // this sets the the home page navigation */}
        <Route path="/" element= {<Hero onShopNow = { () => {
        fetchAllProducts();
-        navigate("/shop");
-        <button onClick={() => navigate("/")} className="underline">
-                    BACK TO SHOP
-                  </button>
+      // navigate("/shop");
+        
        }}/>} />
       {/* // this will set the shop page navigation */}
         <Route path="/shop" element ={
