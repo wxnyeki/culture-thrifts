@@ -97,7 +97,7 @@ function App() {
     });
   }
   // setting the number of products to show in one currentPage
-  const productsPerPage = 4;
+  const productsPerPage = 3;
   //the function to filter products when searching
   const displayProducts = products
   .filter((p) => p.name.toLowerCase().includes(searchProduct.toLowerCase()))
@@ -130,12 +130,12 @@ function App() {
         />
          {/* this shows Hero and categories if we aren't showing the favorites products */}
      <Routes>
-      // this sets the the home page navigation
+      {/* // this sets the the home page navigation */}
        <Route path="/" element= {<Hero onShopNow = { () => {
        fetchAllProducts();
         navigate("/shop");
        }}/>} />
-      // this will set the shop page navigation
+      {/* // this will set the shop page navigation */}
         <Route path="/shop" element ={
           <>
         <Categories  onCategoryClick={fetchByCategory}/>
@@ -162,7 +162,7 @@ function App() {
         </>
         }
         />
-        //this will show the favorite page
+        {/* //this will show the favorite page */}
         <Route path="/favorites" element={
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">

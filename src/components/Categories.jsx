@@ -8,7 +8,7 @@ function Categories( {onCategoryClick}) {
 
   return (
     <section className="mb-10">
-      <h2 className="text-3xl font-black mb-6">
+      <h2 className="text-l font-black mb-6 flex text-blue-500">
         Search by Categories
       </h2>
 

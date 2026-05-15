@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Navbar({cartCount, favoritesCount, onToggleFavorites, searchProduct, onSearchChange, onOpenCart}) {
   return (
     <nav className="flex justify-between items-center p-4">
-      <h1 className="text-2xl font-black">
+      <h1 className="text-3xl font-black font-serif">
         CULTURE THRIFTS
       </h1>
 
