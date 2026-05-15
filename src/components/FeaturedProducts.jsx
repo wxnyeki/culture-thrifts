@@ -5,7 +5,7 @@ function FeaturedProducts({ products, onAddToCart, onFavorite, favoriteIds}) {
   return (
     <section className="mb-10">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-3xl font-black uppercase">
+        <h2 className="text-l font-black uppercase">
           {products.length > 5 ? "Full Collection" : "Featured Products"}
         </h2>
         <span className="text-zinc-500 font-medium">{products.length} Items</span>

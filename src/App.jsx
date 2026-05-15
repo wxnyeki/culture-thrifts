@@ -85,6 +85,23 @@ function App() {
       return [...prev, {...product, quantity: 1}];
     });  
   };
+  // App.js
+
+//  Function to remove an item entirely
+const removeItem = (productId) => {
+  setCart((prev) => prev.filter((item) => item.id !== productId));
+};
+
+//  Function to increase or decrease quantity
+const updateQuantity = (productId, amount) => {
+  setCart((prev) =>
+    prev.map((item) =>
+      item.id === productId
+        ? { ...item, quantity: Math.max(1, item.quantity + amount) }
+        : item
+    )
+  );
+};
   //function to add likes on products
   const toggleFavorite = (product) => {
     setFavorites((prev) => {
@@ -115,7 +132,10 @@ function App() {
       <CartSidebar
       cart={cart} 
       isOpen={isCartOpen} 
-      onClose={() => setIsCartOpen(false)}/>
+      onClose={() => setIsCartOpen(false)}
+      removeItem={removeItem}
+      updateQuantity={updateQuantity}
+      />
       <main className="flex-1 p-6">
         <Navbar 
         cartCount={cart.length} 
@@ -134,6 +154,9 @@ function App() {
        <Route path="/" element= {<Hero onShopNow = { () => {
        fetchAllProducts();
         navigate("/shop");
+        <button onClick={() => navigate("/")} className="underline">
+                    BACK TO SHOP
+                  </button>
        }}/>} />
       {/* // this will set the shop page navigation */}
         <Route path="/shop" element ={
@@ -141,6 +164,7 @@ function App() {
         <Categories  onCategoryClick={fetchByCategory}/>
           {isLoading ? (
           <div className="text-center py-20"> Loading...</div>
+          
         
         ) : (
           <>
@@ -166,7 +190,7 @@ function App() {
         <Route path="/favorites" element={
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-3xl font-black uppercase">Your Favorites</h2>
+                  <h2 className="text-l font-black uppercase text-orange-300">Your Favorites</h2>
                   <button onClick={() => navigate("/shop")} className="underline">
                     BACK TO SHOP
                   </button>
